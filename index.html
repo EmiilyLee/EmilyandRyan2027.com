@@ -1,161 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emily & Ryan</title>
 
-<title>Emily & Ryan</title>
+  <!-- Fonts: elegant script + editorial serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- Luxury fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-
-/* Reset */
-body {
-    margin: 0;
-    font-family: 'Cormorant Garamond', serif;
-    background-color: #f4f1ea;
-    color: #2b2b2b;
-}
-
-/* Top navigation */
-.nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    background: rgba(244,241,234,0.85);
-    backdrop-filter: blur(8px);
-}
-
-.nav a {
-    text-decoration: none;
-    color: #2b2b2b;
-    letter-spacing: 2px;
-    font-size: 14px;
-}
-
-/* Hero section */
-.hero {
-    height: 100vh;
-    background-image: url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1974');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.hero-box {
-    background: rgba(47,58,43,0.65);
-    color: white;
-    padding: 50px;
-    border-radius: 4px;
-
-    animation: fadeUp 2s ease;
-}
-
-.hero h1 {
-    font-family: 'Allura', cursive;
-    font-size: 64px;
-    margin: 0;
-}
-
-.hero p {
-    letter-spacing: 3px;
-}
-
-/* Welcome section */
-.section {
-    padding: 100px 20px;
-    text-align: center;
-    background: #2f3a2b;
-    color: white;
-}
-
-.section h2 {
-    font-family: 'Allura', cursive;
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-.section p {
-    max-width: 500px;
-    margin: auto;
-    line-height: 1.6;
-}
-
-/* Animation */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
+  <style>
+    :root{
+      --ivory:#F6F1E6;
+      --overlay: rgba(18, 20, 16, 0.50);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body{
+      margin:0;
+      font-family:"Cormorant Garamond", serif;
+      background:#0d0d0d;
+      color:var(--ivory);
     }
-}
 
-/* Mobile optimization */
-@media(max-width:600px){
+    /* Top nav (simple + clean like inspo) */
+    .nav{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:10;
+      display:flex;
+      justify-content:center;
+      gap:26px;
+      padding:16px 14px;
+      background: rgba(10,10,10,0.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(246,241,230,0.12);
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      font-size:12px;
+    }
+    .nav a{
+      color:rgba(246,241,230,0.92);
+      text-decoration:none;
+    }
+    .nav a:hover{ color:#fff; }
 
-.hero h1 {
-    font-size: 42px;
-}
+    /* HERO with moving background */
+    .hero{
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+      padding:92px 18px 24px; /* room for fixed nav */
+      position:relative;
+      overflow:hidden;
+    }
 
-.hero-box {
-    padding: 30px;
-}
+    /* Moving background layer (pan left) */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:url("hero.png");
+      background-size:cover;
+      background-position:70% center; /* start more to the right */
+      transform:scale(1.08);
+      animation: panLeft 18s ease-in-out infinite alternate;
+      will-change: background-position;
+    }
 
-.section h2 {
-    font-size: 36px;
-}
+    /* Dark overlay for readability */
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.25), var(--overlay));
+    }
 
-}
+    @keyframes panLeft{
+      0%   { background-position: 75% center; }
+      100% { background-position: 25% center; }
+    }
 
-</style>
+    /* Center “invitation” box */
+    .card{
+      position:relative;
+      z-index:2;
+      width:min(820px, 92vw);
+      padding:34px 22px;
+      text-align:center;
+      border:1px solid rgba(246,241,230,0.22);
+      background: rgba(20, 22, 18, 0.22);
+      border-radius:14px;
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+      box-shadow: 0 18px 55px rgba(0,0,0,0.35);
+    }
 
+    .kicker{
+      font-size:12px;
+      letter-spacing:0.35em;
+      text-transform:uppercase;
+      opacity:0.92;
+      margin-bottom:8px;
+    }
+
+    .names{
+      font-family:"Allura", cursive;
+      font-size:clamp(56px, 8vw, 92px);
+      line-height:1.02;
+      margin:6px 0 10px;
+      color:rgba(246,241,230,0.98);
+      text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .date{
+      font-size:14px;
+      letter-spacing:0.35em;
+      text-transform:uppercase;
+      margin:8px 0 12px;
+      opacity:0.95;
+    }
+
+    .divider{
+      width:84px;
+      height:1px;
+      margin:18px auto 16px;
+      background: rgba(246,241,230,0.55);
+    }
+
+    .sub{
+      font-size:13px;
+      letter-spacing:0.28em;
+      text-transform:uppercase;
+      opacity:0.92;
+    }
+
+    /* Simple sections so your menu links work */
+    section.info{
+      padding:80px 18px;
+      background:#0f0f0f;
+      border-top: 1px solid rgba(246,241,230,0.10);
+    }
+    .wrap{
+      width:min(820px, 92vw);
+      margin:0 auto;
+      text-align:center;
+    }
+    .h2{
+      font-family:"Allura", cursive;
+      font-size:44px;
+      margin:0 0 10px;
+    }
+    .p{
+      margin:0;
+      opacity:0.85;
+      line-height:1.7;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 420px){
+      .nav{ gap:18px; font-size:11px; }
+      .card{ padding:28px 16px; }
+      @keyframes panLeft{
+        0%   { background-position: 65% center; }
+        100% { background-position: 35% center; }
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="nav">
+    <a href="#home">Home</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#details">Details</a>
+    <a href="#registry">Registry</a>
+  </div>
 
-<div class="nav">
-<a href="#">HOME</a>
-<a href="#">RSVP</a>
-<a href="#">DETAILS</a>
-<a href="#">REGISTRY</a>
-</div>
+  <section class="hero" id="home">
+    <div class="card">
+      <div class="kicker">The wedding of</div>
+      <div class="names">Emily & Ryan</div>
+      <div class="date">September 18, 2027</div>
+      <div class="divider"></div>
+      <div class="sub">Welcome</div>
+    </div>
+  </section>
 
-<section class="hero">
+  <section class="info" id="rsvp">
+    <div class="wrap">
+      <div class="h2">RSVP</div>
+      <p class="p">Coming soon.</p>
+    </div>
+  </section>
 
-<div class="hero-box">
+  <section class="info" id="details">
+    <div class="wrap">
+      <div class="h2">Details</div>
+      <p class="p">Location details coming soon.</p>
+    </div>
+  </section>
 
-<h1>Emily & Ryan</h1>
-<p>SEPTEMBER 18, 2027</p>
-<p>WELCOME</p>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>Welcome</h2>
-
-<p>
-We are so excited to celebrate with you.
-More details will be shared soon.
-</p>
-
-</section>
-
+  <section class="info" id="registry">
+    <div class="wrap">
+      <div class="h2">Registry</div>
+      <p class="p">Coming soon.</p>
+    </div>
+  </section>
 </body>
 </html>
