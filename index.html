@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Emily & Ryan</title>
+
+<!-- Luxury fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* Reset */
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #f4f1ea;
+    color: #2b2b2b;
+}
+
+/* Top navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: rgba(244,241,234,0.85);
+    backdrop-filter: blur(8px);
+}
+
+.nav a {
+    text-decoration: none;
+    color: #2b2b2b;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+/* Hero section */
+.hero {
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1974');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-box {
+    background: rgba(47,58,43,0.65);
+    color: white;
+    padding: 50px;
+    border-radius: 4px;
+
+    animation: fadeUp 2s ease;
+}
+
+.hero h1 {
+    font-family: 'Allura', cursive;
+    font-size: 64px;
+    margin: 0;
+}
+
+.hero p {
+    letter-spacing: 3px;
+}
+
+/* Welcome section */
+.section {
+    padding: 100px 20px;
+    text-align: center;
+    background: #2f3a2b;
+    color: white;
+}
+
+.section h2 {
+    font-family: 'Allura', cursive;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.section p {
+    max-width: 500px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile optimization */
+@media(max-width:600px){
+
+.hero h1 {
+    font-size: 42px;
+}
+
+.hero-box {
+    padding: 30px;
+}
+
+.section h2 {
+    font-size: 36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="nav">
+<a href="#">HOME</a>
+<a href="#">RSVP</a>
+<a href="#">DETAILS</a>
+<a href="#">REGISTRY</a>
+</div>
+
+<section class="hero">
+
+<div class="hero-box">
+
+<h1>Emily & Ryan</h1>
+<p>SEPTEMBER 18, 2027</p>
+<p>WELCOME</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Welcome</h2>
+
+<p>
+We are so excited to celebrate with you.
+More details will be shared soon.
+</p>
+
+</section>
+
+</body>
+</html>
