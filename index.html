@@ -1,229 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emily & Ryan</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Clean serif for the small text -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Emily & Ryan</title>
 
-  <style>
-    /* ✅ Your custom script font (uploaded to the repo) */
-    @font-face {
-      font-family: "BillaMount";
-      src: url("BillaMount-Regular.ttf") format("truetype");
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
+<!-- Serif font for small text -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 
-    :root{
-      --ivory:#f6f1e6;
-      --overlay: rgba(10,10,10,0.45);
-      --navbg: rgba(10,10,10,0.18);
-      --hairline: rgba(246,241,230,0.14);
-    }
+<style>
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family:"Cormorant Garamond", serif;
-      background:#0b0b0b;
-      color:var(--ivory);
-    }
+/* IMPORT YOUR BILLA MOUNT FONT */
+@font-face {
+    font-family: "BillaMount";
+    src: url("BillaMount-Regular.ttf") format("truetype");
+}
 
-    /* Top nav */
-    .nav{
-      position:fixed;
-      top:0; left:0; right:0;
-      z-index:10;
-      display:flex;
-      justify-content:center;
-      gap:26px;
-      padding:16px 14px;
-      background: var(--navbg);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--hairline);
-      letter-spacing:0.22em;
-      text-transform:uppercase;
-      font-size:12px;
-    }
-    .nav a{
-      color:rgba(246,241,230,0.92);
-      text-decoration:none;
-    }
-    .nav a:hover{ color:#fff; }
+/* VARIABLES */
+:root {
+    --ivory: #f5f2eb;
+}
 
-    /* HERO */
-    .hero{
-      min-height:100vh;
-      display:grid;
-      place-items:center;
-      padding:92px 18px 24px; /* space for fixed nav */
-      position:relative;
-      overflow:hidden;
-    }
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    /* Moving background layer (pan left) */
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:-6% -10%;            /* give extra so edges don't show while moving */
-      background-image:url("Hero.png"); /* ✅ matches your repo file name */
-      background-size:cover;
-      background-position:75% center;  /* start slightly right */
-      transform:scale(1.06);
-      animation: panLeft 18s ease-in-out infinite alternate;
-      will-change: transform;
-    }
+body {
+    background: black;
+    font-family: "Cormorant Garamond", serif;
+    color: var(--ivory);
+    overflow-x: hidden;
+}
 
-    /* overlay for readability */
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(to bottom, rgba(10,10,10,0.18), var(--overlay));
-    }
+/* NAVIGATION */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 36px;
 
-    /* ✅ background moves left */
-    @keyframes panLeft{
-      0%   { transform: translateX(0) scale(1.06); }
-      100% { transform: translateX(-8%) scale(1.06); }
-    }
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(12px);
 
-    /* Center card */
-    .card{
-      position:relative;
-      z-index:2;
-      width:min(860px, 92vw);
-      padding:34px 22px;
-      text-align:center;
-      border:1px solid rgba(246,241,230,0.22);
-      background: rgba(18, 18, 18, 0.22);
-      border-radius:16px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 18px 55px rgba(0,0,0,0.35);
+    z-index: 10;
+}
+
+.nav a {
+    color: var(--ivory);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* HERO SECTION */
+.hero {
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* MOVING BACKGROUND */
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -5% -20%;
+
+    background-image: url("Hero.png");
+
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+    background-position: 80% center;
+
+    transform: scale(1.15);
+
+    animation: panLeft 30s linear infinite;
+
+}
+
+/* CONTINUOUS LEFT LOOP */
+@keyframes panLeft {
+
+    0% {
+        background-position: 80% center;
     }
 
-    .kicker{
-      font-size:12px;
-      letter-spacing:0.35em;
-      text-transform:uppercase;
-      opacity:0.92;
-      margin-bottom:8px;
+    100% {
+        background-position: 20% center;
     }
 
-    /* ✅ Your elegant script font */
-    .names{
-      font-family:"BillaMount", "Cormorant Garamond", serif;
-      font-size:clamp(60px, 9vw, 108px);
-      line-height:1.02;
-      margin:6px 0 10px;
-      color:rgba(246,241,230,0.98);
-      text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* TEXT CONTAINER (NO BOX) */
+.card {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 40px;
+
+}
+
+/* SMALL TOP TEXT */
+.kicker {
+
+    letter-spacing: 6px;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+
+    opacity: 0.9;
+
+}
+
+/* NAMES */
+.names {
+
+    font-family: "BillaMount";
+
+    font-size: clamp(60px, 8vw, 110px);
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    color: var(--ivory);
+
+    text-shadow:
+        0 8px 40px rgba(0,0,0,0.85),
+        0 3px 10px rgba(0,0,0,0.6);
+
+}
+
+/* DATE */
+.date {
+
+    margin-top: 14px;
+
+    font-size: 14px;
+
+    letter-spacing: 6px;
+
+}
+
+/* WELCOME */
+.welcome {
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    letter-spacing: 6px;
+
+}
+
+/* SECTIONS BELOW */
+.section {
+
+    padding: 140px 20px;
+
+    text-align: center;
+
+    background: black;
+
+}
+
+.section-title {
+
+    font-family: "BillaMount";
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+}
+
+.section-text {
+
+    font-size: 18px;
+
+    opacity: 0.8;
+
+}
+
+/* MOBILE FIX */
+@media(max-width:600px){
+
+    .names {
+        font-size: 54px;
+        white-space: normal;
     }
 
-    .date{
-      font-size:14px;
-      letter-spacing:0.35em;
-      text-transform:uppercase;
-      margin:10px 0 12px;
-      opacity:0.95;
+    .section-title {
+        font-size: 54px;
     }
 
-    .divider{
-      width:90px;
-      height:1px;
-      margin:18px auto 16px;
-      background: rgba(246,241,230,0.55);
-    }
+}
 
-    .sub{
-      font-size:13px;
-      letter-spacing:0.28em;
-      text-transform:uppercase;
-      opacity:0.92;
-    }
+</style>
 
-    /* Sections */
-    section.info{
-      padding:86px 18px;
-      background:#0f0f0f;
-      border-top: 1px solid rgba(246,241,230,0.10);
-    }
-    .wrap{
-      width:min(860px, 92vw);
-      margin:0 auto;
-      text-align:center;
-    }
-    .h2{
-      font-family:"BillaMount", "Cormorant Garamond", serif;
-      font-size:56px;
-      margin:0 0 10px;
-      letter-spacing:0.02em;
-    }
-    .p{
-      margin:0;
-      opacity:0.85;
-      line-height:1.7;
-      font-size:18px;
-    }
-
-    /* Mobile tweaks */
-    @media (max-width: 420px){
-      .nav{ gap:18px; font-size:11px; }
-      .card{ padding:28px 16px; }
-      @keyframes panLeft{
-        0%   { transform: translateX(0) scale(1.06); }
-        100% { transform: translateX(-6%) scale(1.06); }
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <div class="nav">
-    <a href="#home">Home</a>
-    <a href="#rsvp">RSVP</a>
-    <a href="#details">Details</a>
-    <a href="#registry">Registry</a>
-  </div>
 
-  <section class="hero" id="home">
-    <div class="card">
-      <div class="kicker">The wedding of</div>
-      <div class="names">Emily &amp; Ryan</div>
-      <div class="date">September 18, 2027</div>
-      <div class="divider"></div>
-      <div class="sub">Welcome</div>
-    </div>
-  </section>
 
-  <section class="info" id="rsvp">
-    <div class="wrap">
-      <div class="h2">RSVP</div>
-      <p class="p">Coming soon.</p>
-    </div>
-  </section>
+<div class="nav">
 
-  <section class="info" id="details">
-    <div class="wrap">
-      <div class="h2">Details</div>
-      <p class="p">Location details coming soon.</p>
-    </div>
-  </section>
+<a href="#">HOME</a>
+<a href="#">RSVP</a>
+<a href="#">DETAILS</a>
+<a href="#">REGISTRY</a>
 
-  <section class="info" id="registry">
-    <div class="wrap">
-      <div class="h2">Registry</div>
-      <p class="p">Coming soon.</p>
-    </div>
-  </section>
+</div>
+
+
+<section class="hero">
+
+<div class="card">
+
+<div class="kicker">THE WEDDING OF</div>
+
+<div class="names">
+Emily & Ryan
+</div>
+
+<div class="date">
+SEPTEMBER 18, 2027
+</div>
+
+<div class="welcome">
+WELCOME
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="section-title">Details</div>
+
+<div class="section-text">
+Location details coming soon.
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="section-title">Registry</div>
+
+<div class="section-text">
+Coming soon.
+</div>
+
+</section>
+
+
 </body>
 </html>
