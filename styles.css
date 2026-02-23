@@ -1,0 +1,130 @@
+/* ---------- Font ---------- */
+@font-face {
+  font-family: "BillaMount";
+  src: url("BillaMount-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Reset ---------- */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0b0f14;
+  color: #111;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* Moving background:
+   Two copies side-by-side = seamless loop */
+.hero__bg{
+  position: absolute;
+  inset: 0;
+  background-image: url("hero.png"), url("hero.png");
+  background-repeat: repeat-x, repeat-x;
+  background-size: auto 100%, auto 100%;
+  background-position: 0 0, 100% 0;
+  animation: scrollLeft 55s linear infinite;
+  transform: translateZ(0);
+}
+
+/* Dark overlay so text pops */
+.hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.28);
+}
+
+/* Content */
+.hero__content{
+  position: relative;
+  z-index: 1;
+  width: min(980px, 92vw);
+  padding: 64px 18px;
+  text-align: center;
+}
+
+/* Names */
+.hero__names{
+  font-family: "BillaMount", serif;
+  font-weight: 400;
+  font-size: clamp(54px, 7vw, 92px);
+  line-height: 1;
+  margin: 0;
+  color: rgba(255,255,255,0.98);
+  letter-spacing: 0.5px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Date / location */
+.hero__meta{
+  margin: 14px 0 0;
+  font-size: clamp(14px, 1.8vw, 18px);
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.2px;
+}
+
+/* Nav */
+.hero__nav{
+  margin-top: 22px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero__nav a{
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.14);
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.hero__nav a:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.18);
+}
+
+/* ---------- Sections ---------- */
+.section{
+  width: min(980px, 92vw);
+  margin: 0 auto;
+  padding: 64px 18px;
+  color: #e9eef5;
+}
+
+.section h2{
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.section p{
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ---------- Animation ---------- */
+@keyframes scrollLeft{
+  from { background-position: 0 0, 100% 0; }
+  to   { background-position: -100% 0, 0 0; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .hero__bg{ animation: none; }
+}
