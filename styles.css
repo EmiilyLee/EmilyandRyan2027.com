@@ -30,12 +30,11 @@ body {
 .hero__bg{
   position: absolute;
   inset: 0;
-  background-image: url("hero.png"), url("hero.png");
-  background-repeat: repeat-x, repeat-x;
-  background-size: auto 100%, auto 100%;
-  background-position: 0 0, 100% 0;
-  animation: scrollLeft 55s linear infinite;
-  transform: translateZ(0);
+  background-image: url("./hero.png");
+  background-repeat: no-repeat;
+  background-size: 120% auto; /* zoom in slightly */
+  background-position: 50% 50%;
+  animation: driftLeft 40s linear infinite;
 }
 
 /* Dark overlay so text pops */
@@ -119,9 +118,9 @@ body {
 }
 
 /* ---------- Animation ---------- */
-@keyframes scrollLeft{
-  from { background-position: 0 0, 100% 0; }
-  to   { background-position: -100% 0, 0 0; }
+@keyframes driftLeft{
+  from { background-position: 50% 50%; }
+  to   { background-position: 38% 50%; }
 }
 
 /* Reduced motion */
