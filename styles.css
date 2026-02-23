@@ -34,7 +34,7 @@ body {
   background-repeat: no-repeat;
   background-size: 120% auto; /* zoom in slightly */
   background-position: 50% 50%;
-  animation: driftLeft 40s linear infinite;
+  animation: driftLeft 12s linear infinite;
 }
 
 /* Dark overlay so text pops */
@@ -119,8 +119,8 @@ body {
 
 /* ---------- Animation ---------- */
 @keyframes driftLeft{
-  from { background-position: 50% 50%; }
-  to   { background-position: 38% 50%; }
+  from { background-position 70% 50%; }
+  to   { background-position: 20% 50%; }
 }
 
 /* Reduced motion */
