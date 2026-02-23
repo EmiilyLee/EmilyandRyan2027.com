@@ -74,18 +74,19 @@ body {
 }
 /* Date / location */
 .hero__meta{
-  font-size: 14px;
-  letter-spacing: 2px;
+  font-size: 13px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 28px;
+  color: rgba(255,255,255,0.75);
+  margin-top: 20px;     /* NEW */
+  margin-bottom: 40px;  /* slightly more space before buttons */
 }
 
 /* Nav */
 .hero__nav{
-  margin-top: 22px;
+  margin-top: 10px;
   display: flex;
-  gap: 14px;
+  gap: 18px;
   justify-content: center;
   flex-wrap: wrap;
 }
