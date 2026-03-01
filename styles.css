@@ -173,3 +173,52 @@ body {
   line-height: 1.85;
   opacity: 0.85;
 }
+/* Details section (cards) */
+.section--dark{
+  width: 100%;
+  margin: 0;
+  padding: 110px 0;
+  background: #0b0f14;
+  color: #e9eef5;
+}
+
+.section--dark .container{
+  width: min(980px, 92vw);
+  margin: 0 auto;
+}
+
+.dark__title{
+  text-align: center;
+  font-size: 34px;
+  font-weight: 500;
+  margin: 0 0 60px;
+}
+
+.details__grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.detail__card{
+  text-align: center;
+  padding: 40px 22px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+}
+
+.detail__card h3{
+  margin: 0 0 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.detail__card p{
+  margin: 8px 0;
+  opacity: 0.85;
+  line-height: 1.6;
+}
