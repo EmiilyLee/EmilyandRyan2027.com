@@ -107,10 +107,7 @@ body {
   background: rgba(255,255,255,0.14);
 }
 
-.hero__nav a:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,0.18);
-}
+
 
 /* ---------- Sections ---------- */
 .section{
@@ -139,4 +136,40 @@ body {
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   .hero__bg{ animation: none; }
+}
+/* only affects your Our Story block */
+.section--light{
+  width: 100%;
+  margin: 0;
+  padding: 110px 0;
+  background: #f5f3ee;
+  color: #1f1f1f;
+}
+
+.section--light .container{
+  width: min(980px, 92vw);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section--light .section__eyebrow{
+  margin: 0 0 14px;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.section--light .section__title{
+  margin: 0 0 18px;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.section--light .section__text{
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: 17px;
+  line-height: 1.85;
+  opacity: 0.85;
 }
