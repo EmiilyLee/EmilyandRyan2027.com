@@ -199,3 +199,31 @@ body{
   opacity: 0.85;
   line-height: 1.6;
 }
+/* ============================= */
+/* TRAVEL SECTION */
+/* ============================= */
+
+.travel__grid{
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 50px;
+}
+
+.travel__card{
+  text-align: center;
+}
+
+.travel__card h3{
+  margin: 0 0 14px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.travel__card p{
+  margin: 6px 0;
+  line-height: 1.7;
+  opacity: 0.85;
+}
