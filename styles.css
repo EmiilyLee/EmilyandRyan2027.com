@@ -10,13 +10,13 @@
 /* ---------- Reset ---------- */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-body {
+body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: #0b0f14;
   color: #111;
 }
 
-/* ---------- HERO ---------- */
+/* ---------- HERO (KEEP MOVING BG) ---------- */
 .hero{
   position: relative;
   min-height: 92vh;
@@ -25,19 +25,16 @@ body {
   overflow: hidden;
 }
 
-/* Moving background:
-   Two copies side-by-side = seamless loop */
 .hero__bg{
   position: absolute;
   inset: 0;
   background-image: url("./hero.png");
   background-repeat: no-repeat;
-  background-size: 120% auto; /* zoom in slightly */
+  background-size: 120% auto;
   background-position: 50% 50%;
   animation: driftLeft 35s linear infinite;
 }
 
-/* Dark overlay so text pops */
 .hero::after{
   content: "";
   position: absolute;
@@ -45,7 +42,6 @@ body {
   background: rgba(0,0,0,0.28);
 }
 
-/* Content */
 .hero__content{
   position: relative;
   z-index: 1;
@@ -54,14 +50,6 @@ body {
   text-align: center;
 }
 
-.hero__eyebrow{
-  font-size: 13px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 18px;
-}
-/* Names */
 .hero__names{
   font-family: "BillaMount", serif;
   font-weight: 400;
@@ -72,19 +60,18 @@ body {
   letter-spacing: 0.4px;
   text-shadow: 0 8px 25px rgba(0,0,0,0.35);
 }
-/* Date / location */
+
 .hero__meta{
   font-size: 13px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: rgba(255,255,255,0.75);
-  margin-top: 20px;     /* NEW */
-  margin-bottom: 40px;  /* slightly more space before buttons */
+  margin-top: 20px;
+  margin-bottom: 44px; /* a touch more space before buttons */
 }
 
-/* Nav */
 .hero__nav{
-  margin-top: 10px;
+  margin-top: 0;
   display: flex;
   gap: 18px;
   justify-content: center;
@@ -107,52 +94,41 @@ body {
   background: rgba(255,255,255,0.14);
 }
 
-
-
-/* ---------- Sections ---------- */
-.section{
-  width: min(980px, 92vw);
-  margin: 0 auto;
-  padding: 64px 18px;
-  color: #e9eef5;
-}
-
-.section h2{
-  margin: 0 0 10px;
-  font-size: 28px;
-}
-
-.section p{
-  margin: 0;
-  opacity: 0.9;
-}
-
 /* ---------- Animation ---------- */
 @keyframes driftLeft{
   from { background-position: 70% 50%; }
   to   { background-position: 20% 50%; }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   .hero__bg{ animation: none; }
 }
-/* only affects your Our Story block */
-.section--light{
-  width: 100%;
-  margin: 0;
+
+/* ============================= */
+/* CANVA-STYLE LAYOUT (CONSISTENT) */
+/* ============================= */
+
+.container{
+  width: min(980px, 92vw);
+  margin: 0 auto;
+}
+
+/* Base section spacing */
+.section{
   padding: 110px 0;
+}
+
+/* Light sections (like your Canva inspo) */
+.section--light{
   background: #f5f3ee;
   color: #1f1f1f;
 }
 
 .section--light .container{
-  width: min(980px, 92vw);
-  margin: 0 auto;
   text-align: center;
 }
 
-.section--light .section__eyebrow{
+.section__eyebrow{
   margin: 0 0 14px;
   font-size: 12px;
   letter-spacing: 4px;
@@ -160,31 +136,24 @@ body {
   opacity: 0.65;
 }
 
-.section--light .section__title{
+.section__title{
   margin: 0 0 18px;
   font-size: 38px;
   font-weight: 400;
 }
 
-.section--light .section__text{
+.section__text{
   margin: 0 auto;
   max-width: 720px;
   font-size: 17px;
   line-height: 1.85;
   opacity: 0.85;
 }
-/* Details section (cards) */
+
+/* Dark sections (for now, matching your current layout) */
 .section--dark{
-  width: 100%;
-  margin: 0;
-  padding: 110px 0;
   background: #0b0f14;
   color: #e9eef5;
-}
-
-.section--dark .container{
-  width: min(980px, 92vw);
-  margin: 0 auto;
 }
 
 .dark__title{
@@ -194,6 +163,14 @@ body {
   margin: 0 0 60px;
 }
 
+.dark__text{
+  text-align: center;
+  margin: 0;
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+/* Details cards */
 .details__grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
