@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emily & Ryan • 2027</title>
-
-  <link rel="stylesheet" href="styles.css?v=1" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
+
 <body>
 
+  <!-- HERO (moving background stays) -->
   <header class="hero">
     <div class="hero__bg" aria-hidden="true"></div>
 
@@ -16,7 +17,7 @@
       <h1 class="hero__names">Emily &amp; Ryan</h1>
       <p class="hero__meta">September 18, 2027 • Powhatan, Virginia</p>
 
-      <nav class="hero__nav">
+      <nav class="hero__nav" aria-label="Site navigation">
         <a href="#story">Our Story</a>
         <a href="#details">Details</a>
         <a href="#travel">Travel</a>
@@ -28,80 +29,81 @@
 
   <main>
 
-    <!-- OUR STORY -->
-    <section id="story" class="section section--light">
-      <div class="container">
-        <p class="section__eyebrow">The Wedding Of</p>
-        <h2 class="section__title">Emily &amp; Ryan</h2>
-        <p class="section__text">
+    <!-- OUR STORY (cream, elegant) -->
+    <section id="story" class="section section--cream">
+      <div class="container container--narrow">
+        <p class="kicker">THE WEDDING OF</p>
+        <h2 class="title">Emily &amp; Ryan</h2>
+        <p class="lead">
           Add a short paragraph here about how you met + what you love about life together.
           Keep it to 4–6 lines. We’ll write the final version later.
         </p>
       </div>
     </section>
 
-    <section id="details" class="section section--light">
-  <div class="container">
-    <h2 class="dark__title">The Details</h2>
-
-    <div class="details__grid">
-
-      <div class="detail__card">
-        <h3>Ceremony</h3>
-        <p>Please arrive by 4:00 PM</p>
-        <p>Ceremony begins at 4:30 PM</p>
-        <p>Historic Whitewood</p>
-        <p>Powhatan, Virginia</p>
-      </div>
-
-      <div class="detail__card">
-        <h3>Reception</h3>
-        <p>Immediately Following</p>
-        <p>Dinner & Dancing</p>
-      </div>
-
-      <div class="detail__card">
-        <h3>Attire</h3>
-        <p>Black Tie Optional</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <section id="travel" class="section section--light">
-  <div class="container">
-    <p class="section__eyebrow">Plan Your Visit</p>
-    <h2 class="section__title">Travel & Accommodations</h2>
-
-    <div class="travel__grid">
-
-      <div class="travel__card">
-        <h3>Venue Address</h3>
-        <p>Historic Whitewood</p>
-        <p>Powhatan, Virginia</p>
-      </div>
-
-      <div class="travel__card">
-        <h3>Accommodations</h3>
-        <p>Hotel recommendations coming soon.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <section id="rsvp" class="section section--light">
+    <!-- DETAILS (cream + 3-column like Canva) -->
+    <section id="details" class="section section--cream">
       <div class="container">
-        <h2 class="dark__title">RSVP</h2>
-        <p class="dark__text">Coming soon.</p>
+        <h2 class="headline">The Details</h2>
+
+        <div class="cards cards--3">
+          <div class="card">
+            <p class="card__label">CEREMONY</p>
+            <p class="card__text">Please arrive by 4:00 PM</p>
+            <p class="card__text">Ceremony begins at 4:30 PM</p>
+            <p class="card__text">Historic Whitewood</p>
+            <p class="card__text">Powhatan, Virginia</p>
+          </div>
+
+          <div class="card">
+            <p class="card__label">RECEPTION</p>
+            <p class="card__text">Immediately Following</p>
+            <p class="card__text">Dinner &amp; Dancing</p>
+          </div>
+
+          <div class="card">
+            <p class="card__label">ATTIRE</p>
+            <p class="card__text">Black Tie Optional</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="registry" class="section section--light">
+    <!-- TRAVEL (cream, 2-column, big title) -->
+    <section id="travel" class="section section--cream">
       <div class="container">
-        <h2 class="dark__title">Registry</h2>
-        <p class="dark__text">Coming soon.</p>
+        <p class="kicker">PLAN YOUR VISIT</p>
+        <h2 class="headline headline--big">Travel &amp; Accommodations</h2>
+
+        <div class="cards cards--2">
+          <div class="card">
+            <p class="card__label">VENUE ADDRESS</p>
+            <p class="card__text">Historic Whitewood</p>
+            <p class="card__text">Powhatan, Virginia</p>
+          </div>
+
+          <div class="card">
+            <p class="card__label">ACCOMMODATIONS</p>
+            <p class="card__text">Hotel recommendations coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP (cream, centered minimal) -->
+    <section id="rsvp" class="section section--cream">
+      <div class="container container--narrow center">
+        <h2 class="headline">RSVP</h2>
+        <p class="lead">Coming soon.</p>
+        <!-- Later we’ll swap this for your real RSVP form -->
+      </div>
+    </section>
+
+    <!-- REGISTRY (cream, centered minimal) -->
+    <section id="registry" class="section section--cream">
+      <div class="container container--narrow center">
+        <h2 class="headline">Registry</h2>
+        <p class="lead">Coming soon.</p>
       </div>
     </section>
 
