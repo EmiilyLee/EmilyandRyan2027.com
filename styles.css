@@ -102,7 +102,7 @@ body{
   background: rgba(255,255,255,0.16);
 }
 
-/* ---------- Sections (Canva vibe) ---------- */
+/* ---------- Sections ---------- */
 .section{
   width: 100%;
   padding: 120px 0;      /* BIG spacing like Canva */
@@ -209,13 +209,58 @@ body{
 }
 
 /* ---------- Animation ---------- */
+.hero{
+  position: relative;
+  min-height: 130vh;          /* makes it extend when you scroll */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #0b0f14;
+}
+
+@media (max-width: 860px){
+  .hero{ min-height: 105vh; }
+}
+
+.hero__bg{
+  position: absolute;
+  inset: 0;
+  background-image: url("./hero.png");
+  background-repeat: no-repeat;
+
+  /* cinematic fill */
+  background-size: cover;
+  background-position: 50% 55%;
+
+  /* subtle depth so drift doesn't show edges */
+  transform: scale(1.08);
+
+  /* KEEP animation */
+  animation: driftLeft 35s linear infinite;
+}
+
+/* moody overlay (still shows the art) */
+.hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.38) 0%,
+      rgba(0,0,0,0.18) 40%,
+      rgba(0,0,0,0.42) 100%
+    );
+}
+
+/* Updated drift that works with cover */
 @keyframes driftLeft{
-  from { background-position: 70% 50%; }
-  to   { background-position: 20% 50%; }
+  from { background-position: 65% 55%; }
+  to   { background-position: 35% 55%; }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   html { scroll-behavior: auto; }
-  .hero__bg{ animation: none; }
+  .hero__bg{ animation: none; transform: none; }
 }
