@@ -25,7 +25,7 @@ body{
   color: var(--ink);
 }
 
-/* ---------- HERO (your moving banner stays) ---------- */
+/* ---------- HERO (moving banner) ---------- */
 .hero{
   position: relative;
   min-height: 92vh;
@@ -62,7 +62,7 @@ body{
 
 .hero__kicker{
   font-size: 14px;
-  letter-spacing: 6px;
+  letter-spacing: 10px;
   text-transform: uppercase;
   color: rgba(255,255,255,0.85);
   margin: 0 0 26px;
