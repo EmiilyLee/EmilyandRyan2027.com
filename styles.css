@@ -84,7 +84,7 @@ body{
   letter-spacing: 3px;
   text-transform: uppercase;
   color: rgba(255,255,255,0.75);
-  margin: 12px 0 34px;
+  margin: 55px 0 60px;   /* more space above + below */
 }
 
 .hero__nav{
@@ -92,6 +92,7 @@ body{
   gap: 18px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .hero__nav a{
@@ -113,7 +114,7 @@ body{
 /* ---------- Sections ---------- */
 .section{
   width: 100%;
-  padding: 120px 0;      /* BIG spacing like Canva */
+  padding: 120px 0;      /* BIG spacing */
   background: var(--cream);
 }
 
@@ -243,7 +244,7 @@ body{
   /* subtle depth so drift doesn't show edges */
   transform: scale(1.08);
 
-  /* KEEP animation */
+  /* animation */
   animation: driftLeft 20s linear infinite;
 }
 
