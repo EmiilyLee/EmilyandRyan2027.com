@@ -78,7 +78,24 @@ body{
   letter-spacing: 0.4px;
   text-shadow: 0 8px 25px rgba(0,0,0,0.35);
 }
+.hero__names{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
 
+.hero__names .name-left{
+  transform: translateX(-20px);
+}
+
+.hero__names .name-right{
+  transform: translateX(20px);
+}
+
+.hero__names .amp{
+  margin: 0 10px;
+}
 .hero__meta{
   font-size: 13px;
   letter-spacing: 3px;
