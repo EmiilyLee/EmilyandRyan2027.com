@@ -60,6 +60,14 @@ body{
   text-align: center;
 }
 
+.hero__kicker{
+  font-size: 14px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 26px;
+}
+
 .hero__names{
   font-family: "BillaMount", serif;
   font-weight: 400;
