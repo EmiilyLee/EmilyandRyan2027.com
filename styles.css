@@ -236,7 +236,7 @@ body{
   transform: scale(1.08);
 
   /* KEEP animation */
-  animation: driftLeft 28s linear infinite;
+  animation: driftLeft 20s linear infinite;
 }
 
 /* moody overlay (still shows the art) */
