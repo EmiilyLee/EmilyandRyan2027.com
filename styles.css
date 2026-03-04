@@ -301,3 +301,11 @@ body{
   html { scroll-behavior: auto; }
   .hero__bg{ animation: none; transform: none; }
 }
+/* Footer */
+.site-footer{
+  text-align: center;
+  font-size: 10px;
+  color: rgba(31,31,31,0.28);
+  letter-spacing: 1.5px;
+  margin: 70px 0 40px;
+}
