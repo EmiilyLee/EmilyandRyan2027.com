@@ -51,11 +51,10 @@ body{
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.20) 0%,
-    rgba(0,0,0,0.10) 40%,
-    rgba(0,0,0,0.00) 65%,
-    rgba(245,243,238,0.75) 90%,
-    rgba(245,243,238,1) 100%
+    rgba(0,0,0,0.42) 0%,
+    rgba(0,0,0,0.18) 45%,
+    rgba(0,0,0,0.00) 72%,
+    rgba(245,243,238,0.88) 100%
   );
 }
 
@@ -97,29 +96,46 @@ body{
   margin: 80px 0 70px;   /* more space above + below */
 }
 
-.hero__nav {
+.hero__nav{
   position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 28px;
+  left: 0;
+  width: 100%;
   display: flex;
-  gap: 80px;
+  justify-content: center;
+  gap: 120px;        /* spreads links across the hero */
+  padding: 0 60px;
   z-index: 10;
 }
-
 .hero__nav a{
   color: rgba(255,255,255,0.95);
   text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 2px;
+  font-size: 15px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  padding: 4px 0;
   position: relative;
+  transition: opacity .25s ease;
 }
 .hero__nav a:hover{
   transform: translateY(-1px);
   opacity: .7;
 }
+/* underline animation */
+.hero__nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:1px;
+  background:white;
+  transition:width .25s ease;
+}
+
+.hero__nav a:hover::after{
+  width:100%;
+}
+
 
 /* ---------- Sections ---------- */
 .section{
