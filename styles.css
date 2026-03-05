@@ -401,4 +401,127 @@ body{
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px 26px;
   }
+  /* ---------------------------
+   Mobile Friendly Defaults
+---------------------------- */
+
+/* Make media behave */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent tiny overflow issues */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Better tap + text sizing */
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ---------------------------
+   Responsive Layout Tweaks
+---------------------------- */
+@media (max-width: 900px) {
+  /* Global spacing */
+  section,
+  .section {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* HERO: reduce top padding so it doesn't feel "too low" on phones */
+  .hero__content {
+    width: 92vw;
+    padding: 78px 16px 46px;
+    text-align: center;
+  }
+
+  /* Make big names scale nicely on small screens */
+  h1,
+  .hero h1,
+  .names {
+    font-size: clamp(34px, 9vw, 56px);
+    line-height: 1.05;
+  }
+
+  /* Subhead/date/location */
+  .hero p,
+  .subhead,
+  .date-line {
+    font-size: 16px;
+    line-height: 1.45;
+    max-width: 28ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Nav: prevent cramming */
+  .nav,
+  nav {
+    padding: 12px 14px;
+  }
+
+  .nav ul,
+  nav ul {
+    gap: 10px;
+    flex-wrap: wrap;       /* allows 2 lines instead of squishing */
+    justify-content: center;
+  }
+
+  .nav a,
+  nav a {
+    padding: 10px 12px;    /* bigger tap target */
+    font-size: 14px;
+  }
+
+  /* Buttons */
+  .btn,
+  button,
+  .button,
+  a.button {
+    min-height: 44px;      /* Apple/Google recommended tap target */
+    padding: 12px 16px;
+    width: 100%;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Cards / columns: turn into a single column */
+  .grid,
+  .columns,
+  .details-grid,
+  .cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* If you have side-by-side blocks */
+  .two-col,
+  .row {
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+
+  /* Section headings breathing room */
+  h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  /* Slightly smaller body text so it looks clean */
+  p, li {
+    font-size: 16px;
+  }
+}
 }
