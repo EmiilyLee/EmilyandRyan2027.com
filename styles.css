@@ -312,3 +312,93 @@ body{
   color: #5c5a3a;
   margin-top: 8px;
 }
+
+/* =========================
+   COUNTDOWN BANNER (swans.gif)
+   ========================= */
+
+#countdown.section.countdown{
+  /* override the global .section look */
+  padding: 0;                 /* remove big section padding */
+  margin-top: 0;              /* stop the -40px pull-up */
+  background: transparent;
+
+  position: relative;
+  min-height: 520px;          /* banner height */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  background-image: url("swans.gif");  /* if in /images, use url("images/swans.gif") */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* soft overlay so text reads */
+#countdown.section.countdown::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    rgba(0,0,0,0.38),
+    rgba(0,0,0,0.22)
+  );
+}
+
+/* keep your container/content above overlay */
+#countdown .container{
+  position: relative;
+  z-index: 1;
+}
+
+/* title: elegant script */
+#countdown .countdown__title{
+  margin: 0 0 18px;
+  font-family: "BillaMount", serif;
+  font-size: clamp(28px, 4vw, 54px);
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* grid: remove bullets, tighten spacing, make it luxe */
+#countdown .countdown__grid{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: clamp(14px, 2.8vw, 34px);
+}
+
+/* hide your dot separators for the clean look */
+#countdown .countdown__sep{
+  display: none;
+}
+
+/* numbers */
+#countdown .countdown__num{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 7vw, 92px);
+  line-height: 1;
+  color: rgba(255,255,255,0.96);
+  text-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* labels */
+#countdown .countdown__label{
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+}
+
+/* mobile: 2x2 layout */
+@media (max-width: 720px){
+  #countdown .countdown__grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 26px;
+  }
+}
