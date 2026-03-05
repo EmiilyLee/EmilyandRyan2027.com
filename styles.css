@@ -278,3 +278,37 @@ body{
   letter-spacing: 1.5px;
   margin: 70px 0 40px;
 }
+/* ---------- Welcome Section ---------- */
+
+.welcome{
+  padding: 140px 0;
+}
+
+.welcome__title{
+  font-family: "BillaMount", serif;
+  font-size: 54px;
+  font-weight: 400;
+  color: #5c5a3a;
+  margin-bottom: 50px;
+}
+
+.welcome__text{
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--muted);
+  max-width: 720px;
+  margin: 0 auto 32px auto;
+}
+
+.welcome__signoff{
+  margin-top: 60px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.welcome__names{
+  font-family: "BillaMount", serif;
+  font-size: 42px;
+  color: #5c5a3a;
+  margin-top: 8px;
+}
