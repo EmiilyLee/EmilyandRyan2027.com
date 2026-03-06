@@ -401,7 +401,9 @@ body{
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px 26px;
   }
-  /* ---------------------------
+}
+
+/* ---------------------------
    Mobile Friendly Defaults
 ---------------------------- */
 
@@ -412,116 +414,70 @@ img, video {
   display: block;
 }
 
-/* Prevent tiny overflow issues */
-html, body {
-  overflow-x: hidden;
-}
-
-/* Better tap + text sizing */
-body {
-  -webkit-text-size-adjust: 100%;
-}
+html, body { overflow-x: hidden; }
+body { -webkit-text-size-adjust: 100%; }
 
 /* ---------------------------
    Responsive Layout Tweaks
 ---------------------------- */
 @media (max-width: 900px) {
-  /* Global spacing */
-  section,
-  .section {
+  section, .section {
     padding-left: 18px !important;
     padding-right: 18px !important;
   }
 }
 
 @media (max-width: 640px) {
-  /* HERO: reduce top padding so it doesn't feel "too low" on phones */
-  .hero__content {
+
+  /* HERO */
+  .hero__content{
     width: 92vw;
     padding: 78px 16px 46px;
     text-align: center;
   }
 
-  /* Make big names scale nicely on small screens */
-  h1,
-  .hero h1,
-  .names {
-    font-size: clamp(34px, 9vw, 56px);
-    line-height: 1.05;
+  /*  hero text uses these classes (not h1/.names) */
+  .hero__kicker{
+    letter-spacing: 6px;     /* was 10px */
+    margin-bottom: 64px;     /* was 120px */
+    font-size: 12px;
   }
 
-  /* Subhead/date/location */
-  .hero p,
-  .subhead,
-  .date-line {
-    font-size: 16px;
-    line-height: 1.45;
-    max-width: 28ch;
-    margin-left: auto;
-    margin-right: auto;
+  .hero__names{
+    font-size: clamp(44px, 10vw, 64px); /* keeps it elegant on mobile */
+    letter-spacing: 1px;
   }
 
-  /* Nav: prevent cramming */
-  .nav,
-  nav {
-    padding: 12px 14px;
+  .hero__meta{
+    margin: 44px 0 40px;     /*  80px 0 70px */
+    font-size: 12px;
+    letter-spacing: 2.5px;
   }
 
-  .nav ul,
-  nav ul {
-    gap: 10px;
-    flex-wrap: wrap;       /* allows 2 lines instead of squishing */
-    justify-content: center;
+  /* NAV: yours is .hero__nav (not nav/.nav) */
+  .hero__nav{
+    top: 16px;
+    gap: 28px;            /* was 120px (too wide for phones) */
+    padding: 0 16px;
+    justify-content: space-between;
   }
 
-  .nav a,
-  nav a {
-    padding: 10px 12px;    /* bigger tap target */
-    font-size: 14px;
+  .hero__nav a{
+    font-size: 13px;
+    letter-spacing: 3px;
+    padding: 10px 10px;   /* larger tap target */
   }
 
-  /* Buttons */
-  .btn,
-  button,
-  .button,
-  a.button {
-    min-height: 44px;      /* Apple/Google recommended tap target */
-    padding: 12px 16px;
-    width: 100%;
-    max-width: 420px;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  /* Cards/columns already stack at 860px; make spacing nicer on small phones */
+  .cards{
+    gap: 34px;
   }
 
-  /* Cards / columns: turn into a single column */
-  .grid,
-  .columns,
-  .details-grid,
-  .cards {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
+  /* Headings a touch smaller */
+  .headline{ font-size: 34px; margin-bottom: 40px; }
+  .headline--big{ font-size: 38px; }
+  .title{ font-size: 30px; }
 
-  /* If you have side-by-side blocks */
-  .two-col,
-  .row {
-    flex-direction: column !important;
-    gap: 14px !important;
+  p, li { font-size: 16px; }
   }
-
-  /* Section headings breathing room */
-  h2 {
-    font-size: 22px;
-    margin-bottom: 12px;
-  }
-
-  /* Slightly smaller body text so it looks clean */
-  p, li {
-    font-size: 16px;
-  }
-}
 }
