@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  window.scrollTo(0, 0);
 
   /* countdown */
   const weddingDate = new Date("September 18, 2027 16:30:00").getTime();
-
   function updateCountdown() {
     const now = new Date().getTime();
     const distance = weddingDate - now;
