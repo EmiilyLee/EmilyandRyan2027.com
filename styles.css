@@ -322,11 +322,12 @@ body{
   margin-top: 4px;
 
   background: linear-gradient(
-    120deg,
-    #6b6845,
-    #5c5a3a,
-    #7a7650
-  );
+  115deg,
+  #6f6b45,
+  #5c5a3a 35%,
+  #4f4c2f 55%,
+  #6f6b45
+);
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
