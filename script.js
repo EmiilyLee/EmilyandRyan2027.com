@@ -21,11 +21,38 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // hamburger menu
-const toggle = document.querySelector(".nav-toggle");
-const menu = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".nav-links");
 
-if (toggle && menu) {
+  if (!toggle || !menu) return;
+
+  const closeMenu = () => {
+    menu.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    toggle.textContent = "☰";
+    toggle.setAttribute("aria-expanded", "false");
+  };
+
+  const openMenu = () => {
+    menu.classList.add("open");
+    document.body.classList.add("menu-open");
+    toggle.textContent = "✕"; // X to close
+    toggle.setAttribute("aria-expanded", "true");
+  };
+
   toggle.addEventListener("click", () => {
-    menu.classList.toggle("open");
+    const isOpen = menu.classList.contains("open");
+    isOpen ? closeMenu() : openMenu();
   });
-}
+
+  //  close menu when clicking a link
+  menu.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", closeMenu);
+  });
+
+  //tap outside links closes menu
+  menu.addEventListener("click", (e) => {
+    if (e.target === menu) closeMenu();
+  });
+});
