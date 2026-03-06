@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RSVP • Emily & Ryan</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+body{
+background:#f5f3ee;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+margin:0;
+font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.rsvp-container{
+text-align:center;
+}
+
+.rsvp-title{
+font-family:"BillaMount", serif;
+font-size:48px;
+margin-bottom:10px;
+}
+
+.rsvp-sub{
+opacity:.7;
+margin-bottom:40px;
+}
+
+.envelope{
+position:relative;
+width:260px;
+height:170px;
+margin:auto;
+cursor:pointer;
+perspective:1000px;
+}
+
+.envelope-body{
+position:absolute;
+width:100%;
+height:100%;
+background:#efe7da;
+border-radius:6px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+overflow:hidden;
+}
+
+.envelope-flap{
+position:absolute;
+top:0;
+width:100%;
+height:100px;
+background:#e8dfd0;
+clip-path:polygon(0 0,100% 0,50% 100%);
+transform-origin:top;
+transition:transform .6s ease;
+z-index:3;
+}
+
+.envelope.open .envelope-flap{
+transform:rotateX(180deg);
+}
+
+.card{
+position:absolute;
+width:80%;
+left:10%;
+height:120px;
+top:40px;
+background:white;
+border-radius:8px;
+box-shadow:0 6px 20px rgba(0,0,0,.1);
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:"BillaMount", serif;
+font-size:28px;
+transition:transform .6s ease;
+}
+
+.envelope.open .card{
+transform:translateY(-60px);
+}
+
+.continue-btn{
+display:none;
+margin-top:40px;
+padding:14px 28px;
+border-radius:30px;
+border:1px solid #aaa;
+background:white;
+cursor:pointer;
+font-size:14px;
+letter-spacing:.1em;
+}
+
+.show{
+display:inline-block;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="rsvp-container">
+
+<h1 class="rsvp-title">Kindly Reply</h1>
+
+<p class="rsvp-sub">
+Click the envelope to open your invitation
+</p>
+
+<div class="envelope" id="envelope">
+
+<div class="envelope-flap"></div>
+
+<div class="envelope-body"></div>
+
+<div class="card">Open</div>
+
+</div>
+
+<button class="continue-btn" id="continue">
+Continue to RSVP
+</button>
+
+</div>
+
+<script>
+
+let envelope=document.getElementById("envelope");
+let btn=document.getElementById("continue");
+
+envelope.onclick=function(){
+
+envelope.classList.add("open");
+
+setTimeout(function(){
+btn.classList.add("show");
+},600);
+
+};
+
+btn.onclick=function(){
+
+window.location.href="rsvp-form.html";
+
+};
+
+</script>
+
+</body>
+</html>
