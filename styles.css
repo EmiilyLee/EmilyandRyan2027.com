@@ -289,28 +289,36 @@ body{
   font-size: 54px;
   font-weight: 400;
   color: #5c5a3a;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
+}
+.welcome__title::after{
+  content: "— ✧ —";
+  display: block;
+  font-size: 13px;
+  letter-spacing: 6px;
+  margin-top: 10px;
+  color: rgba(92,90,58,.55);
 }
 
 .welcome__text{
-  font-size: 18px;
-  line-height: 1.9;
+  font-size: 17px;
+  line-height: 1.75;
   color: var(--muted);
-  max-width: 720px;
-  margin: 0 auto 32px auto;
+  max-width: 620px;
+  margin: 0 auto 20px auto;
 }
 
 .welcome__signoff{
-  margin-top: 60px;
-  font-size: 18px;
+  margin-top: 42px;
+  font-size: 16px;
   color: var(--muted);
 }
 
 .welcome__names{
   font-family: "BillaMount", serif;
-  font-size: 42px;
+  font-size: 40px;
   color: #5c5a3a;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 /* =========================
