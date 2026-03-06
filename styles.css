@@ -462,68 +462,67 @@ body { -webkit-text-size-adjust: 100%; }
    Mobile Hamburger Nav Only
    ========================= */
 
-/* Desktop: show links, hide hamburger */
-.nav-toggle{
-  display: none;
-}
-
-.hero__nav .nav-links{
-  display: flex;
-  gap: 120px;
-}
+/* Desktop: hide hamburger, keep links */
+.nav-toggle{ display:none; }
+.hero__nav .nav-links{ display:flex; gap:120px; }
 
 /* Mobile */
-@media (max-width: 640px){
+@media (max-width:640px){
 
-  /* hide menu by default */
-  .hero__nav .nav-links{
-    display: none;
-  }
-
-  /* show menu only when open */
-  .hero__nav .nav-links.open{
-    position: fixed;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 34px;
-
-    background: rgba(0,0,0,0.78);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    z-index: 999;
-  }
+  .hero__nav .nav-links{ display:none; }
 
   .nav-toggle{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    position: absolute;
-    top: 18px;
-    right: 18px;
+    position:fixed;
+    top:18px;
+    right:18px;
 
-    width: 44px;
-    height: 44px;
+    width:48px;
+    height:48px;
 
-    background: rgba(0,0,0,0.18);
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 999px;
+    background:rgba(0,0,0,.22);
+    border:1px solid rgba(255,255,255,.38);
+    border-radius:999px;
 
-    color: white;
-    font-size: 26px;
-    line-height: 1;
+    color:rgba(255,255,255,.96);
+    font-size:26px;
+    line-height:1;
+    padding:0;
 
-    z-index: 1000;
+    z-index:1002;
   }
 
-  .hero__nav .nav-links a{
-    font-size: 20px;
-    letter-spacing: 4px;
-    color: white;
-    text-decoration: none;
+  .hero__nav .nav-links.open{
+    display:flex;
+    position:fixed;
+    inset:0;
+
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:28px;
+
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    z-index:1001;
   }
+
+  .hero__nav .nav-links.open a{
+    font-size:20px;
+    letter-spacing:4px;
+    padding:10px 14px;
+    color:white;
+    text-decoration:none;
+  }
+
+  .hero__nav .nav-links.open a::after{ display:none; }
 }
+
+.hero__bg{ pointer-events:none; }
+
+body.menu-open{ overflow:hidden; }
