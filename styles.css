@@ -108,9 +108,16 @@ body{
 /* ---------- Sections ---------- */
 .section{
   width: 100%;
-  padding: 120px 0;      /* BIG spacing */
-  background: var(--cream);
+  padding: 120px 0;
   margin-top: -40px;
+
+  background-color: var(--cream);
+
+  background-image:
+    radial-gradient(rgba(0,0,0,.02) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,.015) 1px, transparent 1px);
+
+  background-size: 4px 4px, 6px 6px;
 }
 
 .container{
