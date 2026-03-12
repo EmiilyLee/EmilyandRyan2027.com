@@ -121,7 +121,11 @@ body{
 }
 .section--sage{
   background-color: #8f9a7a;
-  background-image: none;
+  background-image: 
+    radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,.02) 1px, transparent 1px);
+
+  background-size: 4px 4px, 6px 6px;
 }
 .rsvp-envelope{
   width: 850px;
