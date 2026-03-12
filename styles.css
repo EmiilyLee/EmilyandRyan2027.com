@@ -127,11 +127,20 @@ body{
 
   background-size: 4px 4px, 6px 6px;
 }
+/* RSVP section adjustments */
+#rsvp{
+  padding: 60px 0 80px;
+}
+
+#rsvp .headline{
+  margin-bottom: 10px;
+}
+
 .rsvp-envelope{
-  width: 850px;
+  width: 1100px;
   max-width: 95%;
   display: block;
-  margin: 60px auto 0;
+  margin: 10px auto 0;
   filter: drop-shadow(0 25px 35px rgba(0,0,0,0.25));
 }
 
