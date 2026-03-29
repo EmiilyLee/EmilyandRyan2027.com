@@ -120,7 +120,7 @@ body{
   background-size: 4px 4px, 6px 6px;
 }
 .section--sage{
-  background-color: ##B7BEA5;
+  background-color: #B7BEA5;
   background-image: 
     radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
     radial-gradient(rgba(0,0,0,.02) 1px, transparent 1px);
