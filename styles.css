@@ -624,3 +624,20 @@ body { -webkit-text-size-adjust: 100%; }
 .hero__bg{ pointer-events:none; }
 
 body.menu-open{ overflow:hidden; }
+
+.rsvp-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rsvp-cta{
+  margin-top: 32px;
+
+  font-family: "BillaMount", serif;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+
+  color: rgba(244,241,234,0.9);
+  text-align: center;
+}
