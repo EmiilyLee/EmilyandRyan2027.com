@@ -631,6 +631,7 @@ body.menu-open{ overflow:hidden; }
   align-items: center;
 }
 
+<!--RSVP CLICK--> 
 .rsvp-cta{
   margin-top: -20px;
 
@@ -650,4 +651,18 @@ body.menu-open{ overflow:hidden; }
 
 .rsvp-link:hover{
   opacity: 0.96;
+}
+
+<!--RSVP PAGE-->
+.rsvp-page{
+  min-height: 100vh;
+  margin: 0;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("engagement-background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
