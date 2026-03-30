@@ -662,13 +662,13 @@ body.menu-open{ overflow:hidden; }
 }
 
 body.rsvp-page {
-  min-height: 100vh;
+  min-height: 130vh;
   margin: 0;
   background:
     linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
     url("engagement-background.jpg");
   background-size: cover;
-  background-position: center 35%;
+  background-position: center 45%;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
@@ -676,6 +676,6 @@ body.rsvp-page {
 /* Desktop only */
 @media (min-width: 900px) {
   body.rsvp-page {
-    background-position: center 20%;
+    background-position: center 30%;
   }
 }
