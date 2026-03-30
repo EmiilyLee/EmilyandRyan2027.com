@@ -642,3 +642,12 @@ body.menu-open{ overflow:hidden; }
   color: rgba(244,241,234,0.9);
   text-align: center;
 }
+.rsvp-link{
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rsvp-link:hover{
+  opacity: 0.96;
+}
