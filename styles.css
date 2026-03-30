@@ -631,7 +631,7 @@ body.menu-open{ overflow:hidden; }
   align-items: center;
 }
 
-<!--RSVP CLICK--> 
+/* RSVP CLICK */
 .rsvp-cta{
   margin-top: -20px;
 
@@ -653,7 +653,7 @@ body.menu-open{ overflow:hidden; }
   opacity: 0.96;
 }
 
-<!--RSVP PAGE-->
+/* RSVP PAGE */
 .rsvp-page{
   min-height: 100vh;
   margin: 0;
