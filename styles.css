@@ -654,28 +654,170 @@ body.menu-open{ overflow:hidden; }
 }
 
 /* RSVP PAGE */
-.rsvp-test{
-  color: white;
-  text-align: center;
-  padding-top: 100px;
-  font-size: 30px;
+body.rsvp-page {
+  margin: 0;
+  background: #2f0d0d;
 }
 
-body.rsvp-page {
-  min-height: 130vh;
-  margin: 0;
+/* TOP PHOTO SECTION */
+.rsvp-hero {
+  min-height: 100vh;
   background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
     url("engagement-background.jpg");
   background-size: cover;
-  background-position: center 45%;
+  background-position: center 35%;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  position: relative;
 }
 
-/* Desktop only */
+/* desktop crop adjustment */
 @media (min-width: 900px) {
-  body.rsvp-page {
-    background-position: center 30%;
+  .rsvp-hero {
+    background-position: center 25%;
   }
 }
+
+.rsvp-overlay {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.rsvp-card {
+  position: relative;
+  width: min(260px, 52vw);
+}
+
+.lace-frame {
+  width: 100%;
+  display: block;
+  opacity: 0.92;
+}
+
+.rsvp-content {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62%;
+  text-align: center;
+  color: #5c5a3a;
+}
+
+.rsvp-content h1 {
+  margin: 0 0 12px;
+  font-family: "BillaMount", serif;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 400;
+}
+
+.rsvp-content p {
+  margin: 0 0 18px;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.rsvp-button {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid #5c5a3a;
+  color: #5c5a3a;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.25s ease;
+}
+
+.rsvp-button:hover {
+  background: #5c5a3a;
+  color: #fff;
+}
+
+/* BOTTOM COLORED SECTION */
+.rsvp-bottom {
+  background: #4a120f;
+  color: rgba(255,255,255,0.92);
+  padding: 110px 20px 90px;
+  text-align: center;
+}
+
+.rsvp-bottom-inner {
+  width: min(760px, 92vw);
+  margin: 0 auto;
+}
+
+.rsvp-monogram {
+  font-family: "BillaMount", serif;
+  font-size: clamp(48px, 8vw, 90px);
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.rsvp-note,
+.rsvp-email {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.rsvp-email {
+  margin-bottom: 55px;
+}
+
+.rsvp-love {
+  margin: 0 0 22px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.rsvp-signoff {
+  margin: 0 0 60px;
+  font-family: "BillaMount", serif;
+  font-size: clamp(42px, 6vw, 78px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.rsvp-back {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.rsvp-back:hover {
+  opacity: 0.75;
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  .rsvp-overlay {
+    padding-top: 55px;
+  }
+
+  .rsvp-card {
+    width: min(220px, 62vw);
+  }
+
+  .rsvp-content {
+    width: 64%;
+  }
+
+  .rsvp-content p {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .rsvp-bottom {
+    padding: 80px 18px 70px;
+  }
