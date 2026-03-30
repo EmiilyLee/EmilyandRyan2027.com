@@ -659,10 +659,17 @@ body.menu-open{ overflow:hidden; }
   margin: 0;
 
   background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
     url("engagement-background.jpg");
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.rsvp-test{
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+  font-size: 30px;
 }
