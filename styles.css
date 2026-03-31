@@ -818,3 +818,9 @@ body.rsvp-page {
     padding: 55px 18px 45px;
   }
 }
+/* FIX RSVP SCROLL ISSUE */
+body.rsvp-page .rsvp-overlay,
+body.rsvp-page .rsvp-card,
+body.rsvp-page .lace-frame {
+  pointer-events: none;
+}
