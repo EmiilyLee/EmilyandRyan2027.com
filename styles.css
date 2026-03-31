@@ -685,7 +685,7 @@ body.rsvp-page {
 
   transform: translate(-50%, -50%);
 
-  width: min(420px, 40vw);
+  width: min(750px, 60vw);
 }
 
 
