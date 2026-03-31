@@ -661,25 +661,19 @@ body.rsvp-page {
 
 /* TOP PHOTO SECTION */
 .rsvp-hero {
-  min-height: 150vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
-    url("engagement-background.jpg");
-  background-size: cover;
-  background-position: center 38%;
-  background-repeat: no-repeat;
   position: relative;
+  width: 100%;
 }
 
-/* desktop crop adjustment */
-@media (min-width: 900px) {
-  .rsvp-hero {
-    background-position: center 28%;
-  }
+.hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .rsvp-overlay {
-  min-height: 150vh;
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -801,18 +795,12 @@ body.rsvp-page {
 
 /* mobile */
 @media (max-width: 640px) {
-  .rsvp-hero {
-    min-height: 115vh;
-    background-position: center 35%;
+  .rsvp-card {
+    width: min(220px, 62vw);
   }
 
   .rsvp-overlay {
-    min-height: 115vh;
     padding-top: 55px;
-  }
-
-  .rsvp-card {
-    width: min(220px, 62vw);
   }
 
   .rsvp-content {
