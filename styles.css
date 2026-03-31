@@ -825,10 +825,13 @@ body.rsvp-page .lace-frame {
   pointer-events: none;
 }
 .rsvp-text-block {
+  position: absolute;
+  top: 78%;   /* controls vertical placement */
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   text-align: center;
-  margin-top: -120px; /* pulls it UP into the photo like your inspo */
-  margin-bottom: 60px;
-  position: relative;
+  width: 100%;
   z-index: 2;
 }
 
