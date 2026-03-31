@@ -826,7 +826,7 @@ body.rsvp-page .lace-frame {
 }
 .rsvp-text-block {
   position: absolute;
-  top: 230%;   /* THIS pushes it directly under the lace frame */
+  top: 220%;   /* THIS pushes it directly under the lace frame */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
