@@ -680,12 +680,12 @@ body.rsvp-page {
   position: absolute;
 
   /* placement control */
-  top: 55%;
-  left: 60%;
+  top: 52%;
+  left: 58%;
 
   transform: translate(-50%, -50%);
 
-  width: min(240px, 28vw);
+  width: min(420px, 40vw);
 }
 
 
