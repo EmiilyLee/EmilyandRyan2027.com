@@ -699,6 +699,7 @@ body.rsvp-page {
   font-family: "BillaMount", serif;
   font-size: clamp(32px, 3vw, 60px);
   font-style: italic;
+  font-weight: 500;
 
   color: rgba(255,255,255,0.75);
   text-align: center;
