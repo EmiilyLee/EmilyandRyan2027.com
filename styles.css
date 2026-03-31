@@ -687,7 +687,29 @@ body.rsvp-page {
 
   width: min(2000px, 100vw);
 }
+/* RSVP intro text (top floating script) */
+.rsvp-intro {
+  position: absolute;
 
+  top: 42%;
+  left: 60%;
+
+  transform: translate(-50%, -50%);
+
+  font-family: "BillaMount", serif;
+  font-size: clamp(32px, 3vw, 60px);
+  font-style: italic;
+
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+
+  letter-spacing: 1px;
+  white-space: nowrap;
+
+  z-index: 2;
+
+  text-shadow: 0 0 25px rgba(255,255,255,0.12);
+}
 
 .lace-frame {
   width: 100%;
