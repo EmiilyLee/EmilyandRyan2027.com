@@ -824,3 +824,26 @@ body.rsvp-page .rsvp-card,
 body.rsvp-page .lace-frame {
   pointer-events: none;
 }
+.rsvp-text-block {
+  text-align: center;
+  margin-top: -120px; /* pulls it UP into the photo like your inspo */
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.rsvp-subtext {
+  font-family: "BillaMount", serif;
+  font-size: clamp(22px, 2.5vw, 36px);
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 20px;
+}
+
+.rsvp-location {
+  font-size: 16px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
