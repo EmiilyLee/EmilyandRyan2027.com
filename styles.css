@@ -687,6 +687,30 @@ body.rsvp-page {
 
   width: min(2000px, 100vw);
 }
+.save-date-text {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+}
+
+/* "Save Our" */
+.save-script {
+  font-family: "BillaMount", serif;
+  font-size: clamp(40px, 4vw, 90px);
+  color: #5a0f0f;
+  line-height: 0.9;
+}
+
+/* "Date" (bigger like your inspo) */
+.date-script {
+  font-family: "BillaMount", serif;
+  font-size: clamp(70px, 5vw, 130px);
+  color: #5a0f0f;
+  line-height: 0.9;
+}
 /* RSVP intro text (top floating script) */
 .rsvp-intro {
   position: absolute;
