@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Emily & Ryan</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #f5f1eb;
+      font-family: "Times New Roman", serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    input {
+      padding: 12px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 12px 28px;
+      border: none;
+      background-color: black;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Emily & Ryan</h1>
+
+  <p>Please enter the invitation password</p>
+
+  <input
+    type="password"
+    id="password"
+    placeholder="Enter Password"
+  >
+
+  <br>
+
+  <button onclick="checkPassword()">
+    Enter
+  </button>
+
+  <script>
+
+    function checkPassword() {
+
+      const password =
+        document.getElementById("password").value;
+
+      if (password === "Swans2027") {
+
+        window.location.href = "home.html";
+
+      } else {
+
+        alert("Incorrect Password");
+
+      }
+    }
+
+  </script>
+
+</body>
+</html>
