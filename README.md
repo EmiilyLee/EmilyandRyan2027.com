@@ -1,4 +1,4 @@
-# Emily & Ryan Wedding Website
+# Wedding Website
 
 A custom wedding website I designed and developed from scratch using HTML, CSS, and JavaScript. This project was created to provide guests with wedding information through a responsive website while giving me hands-on experience with front-end web development, deployment, and version control.
 
