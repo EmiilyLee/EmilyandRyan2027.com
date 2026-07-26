@@ -1,0 +1,21 @@
+{
+  "name": "emilyandryan2027.com",
+  "version": "1.0.0",
+  "description": "Emily and Ryan's Wedding Website - 2027",
+  "main": "script.js",
+  "scripts": {
+    "deploy": "npx netlify-cli deploy --prod --dir=."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmiilyLee/EmilyandRyan2027.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/EmiilyLee/EmilyandRyan2027.com/issues"
+  },
+  "homepage": "https://github.com/EmiilyLee/EmilyandRyan2027.com#readme"
+}
