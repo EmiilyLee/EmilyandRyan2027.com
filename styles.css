@@ -1,4 +1,6 @@
-/* ---------- Font ---------- */
+/* ==========================================================================================================
+*** Font ***
+===========================================================================================================*/
 @font-face {
   font-family: "BillaMount";
   src: url("fonts/BillaMount-Regular.ttf") format("truetype");
@@ -6,8 +8,9 @@
   font-style: normal;
   font-display: swap;
 }
-
-/* ---------- Base / Reset ---------- */
+/* ============================================================================================================
+*** Base Styles and Reset ***
+=============================================================================================================*/
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -104,8 +107,9 @@ body{
   width:100%;
 }
 
-
-/* ---------- Sections ---------- */
+/* ==========================================================================================================
+*** Sections ***
+===========================================================================================================*/
 .section{
   width: 100%;
   padding: 120px 0;
@@ -246,7 +250,9 @@ body{
   }
 }
 
-/* ---------- Animation ---------- */
+/* ============================================================================================================
+*** Animation Hero Section ***
+=============================================================================================================*/
 .hero{
   position: relative;
   min-height: 130vh;          /* makes it extend scroll */
@@ -266,18 +272,18 @@ body{
   background-image: url("images/hero.png");
   background-repeat: no-repeat;
 
-  /* cinematic fill */
+  /* Scale background to fill the hero */
   background-size: cover;
   background-position: 50% 55%;
 
-  /* subtle depth so drift doesn't show edges */
+  /* slight zoom prevents empty edges during animation */
   transform: scale(1.08);
 
-  /* animation */
+  /* back ground drift animation */
   animation: driftLeft 20s linear infinite;
 }
 
-/* moody overlay (still shows the art) */
+/* dark overlay for improved text readability */
 .hero::after{
   content: "";
   position: absolute;
@@ -293,7 +299,7 @@ body{
   );
 }
 
-/* Updated drift that works with cover */
+/* background drift keyframes */
 @keyframes driftLeft{
   from { background-position: 65% 55%; }
   to   { background-position: 35% 55%; }
@@ -312,7 +318,9 @@ body{
   letter-spacing: 1.5px;
   margin: 70px 0 40px;
 }
-/* ---------- Welcome Section ---------- */
+/* ============================================================================================================
+*** Welcome Section ***
+=============================================================================================================*/
 
 .welcome{
   padding: 0px 0;
@@ -368,13 +376,14 @@ body{
 
     text-shadow: 0 1px 1px rgba(0,0,0,.08);
 }
-/* =========================
-   COUNTDOWN BANNER (swans.gif)
-   ========================= */
+/* ============================================================================================================
+*** Countdown Banner (swans.gif) ***
+=============================================================================================================*/
+   
 
 #countdown.section.countdown{
   /* override the global .section look */
-  padding: 0;                 /* remove big section padding */
+  padding: 0;                 /* section padding */
   margin-top: 0;              /* stop the -40px pull-up */
   background: transparent;
 
@@ -384,13 +393,13 @@ body{
   place-items: center;
   overflow: hidden;
 
-  background-image: url("images/swans.gif");  /* if in /images, use url("images/swans.gif") */
+  background-image: url("images/swans.gif"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* soft overlay so text reads */
+/* teext contrast */
 #countdown.section.countdown::before{
   content:"";
   position:absolute;
@@ -401,13 +410,13 @@ body{
   );
 }
 
-/* keep your container/content above overlay */
+/* keep content above overlay */
 #countdown .container{
   position: relative;
   z-index: 1;
 }
 
-/* title: elegant script */
+/* countdown heading */
 #countdown .countdown__title{
   margin: 0 0 18px;
   font-family: "BillaMount", serif;
@@ -418,7 +427,7 @@ body{
   text-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
-/* grid: remove bullets, tighten spacing, make it luxe */
+/* countdown layout */
 #countdown .countdown__grid{
   display: flex;
   align-items: baseline;
@@ -426,12 +435,12 @@ body{
   gap: clamp(14px, 2.8vw, 34px);
 }
 
-/* hide your dot separators for the clean look */
+/* hide separators */
 #countdown .countdown__sep{
   display: none;
 }
 
-/* numbers */
+/* countdown values */
 #countdown .countdown__num{
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(46px, 7vw, 92px);
@@ -440,7 +449,7 @@ body{
   text-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
-/* labels */
+/* countdown labels */
 #countdown .countdown__label{
   margin-top: 10px;
   font-size: 12px;
@@ -449,7 +458,7 @@ body{
   color: rgba(255,255,255,0.85);
 }
 
-/* mobile: 2x2 layout */
+/* mobile countdown layout */
 @media (max-width: 720px){
   #countdown .countdown__grid{
     display: grid;
@@ -458,9 +467,9 @@ body{
   }
 }
 
-/* =========================
-   Timeline Section
-   ========================= */
+/* ============================================================================================================
+*** Timeline Section ***
+=============================================================================================================*/
 
 .timeline-wrapper{
   display:flex;
@@ -501,9 +510,9 @@ body{
   color:#5c5a3a;
 }
 
-/* ---------------------------
-   Mobile Friendly Defaults
----------------------------- */
+/* ============================================================================================================
+*** Mobile Friendly Defaults ***
+=============================================================================================================*/
 
 img, video {
   max-width: 100%;
@@ -556,15 +565,16 @@ body { -webkit-text-size-adjust: 100%; }
 
   p, li { font-size: 16px; }
 }
-/* =========================
-   Mobile Hamburger Nav Only
-   ========================= */
 
-/* Desktop: hide hamburger, keep links */
+/* ============================================================================================================
+*** Mobile Navigation Only ***
+=============================================================================================================*/
+
+/* Desktop navigation  */
 .nav-toggle{ display:none; }
 .hero__nav .nav-links{ display:flex; gap:120px; }
 
-/* Mobile */
+/* Mobile navigation */
 @media (max-width:640px){
 
   .hero__nav .nav-links{ display:none; }
@@ -631,7 +641,7 @@ body.menu-open{ overflow:hidden; }
   align-items: center;
 }
 
-/* RSVP CLICK */
+/* RSVP call to action */
 .rsvp-cta{
   margin-top: -20px;
 
@@ -653,13 +663,13 @@ body.menu-open{ overflow:hidden; }
   opacity: 0.96;
 }
 
-/* RSVP PAGE */
+/* RSVP Page layout */
 body.rsvp-page {
   margin: 0;
   background: #2f0d0d;
 }
 
-/* TOP PHOTO SECTION */
+/* RSVP hero */
 .rsvp-hero {
   position: relative;
   width: 100%;
@@ -679,7 +689,7 @@ body.rsvp-page {
 .rsvp-card {
   position: absolute;
 
-  /* placement control */
+  /* invitation placement */
   top: 68%;
   left: 58%;
 
@@ -696,7 +706,7 @@ body.rsvp-page {
   z-index: 3;
 }
 
-/* "Save Our" */
+/* save our text */
 .save-script {
   font-family: "BillaMount", serif;
   font-size: clamp(40px, 4vw, 90px);
@@ -704,22 +714,22 @@ body.rsvp-page {
   line-height: 0.9;
 }
 
-/* "Date" (bigger like your inspo) */
+/* date text */
 .date-script {
   font-family: "BillaMount", serif;
   font-size: clamp(70px, 5vw, 130px);
   color: #5a0f0f;
   line-height: 0.9;
 }
-/* RSVP intro text (top floating script) */
+/* Intro heading */
 .rsvp-intro {
   position: absolute;
 
-  top: 48%;   /* slightly lower */
+  top: 48%;   
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 90%;  /* THIS makes it stretch across like your inspo */
+  width: 90%;  /* THIS makes it stretch across */
 
   font-family: "BillaMount", serif;
   font-size: clamp(42px, 5vw, 110px);
@@ -789,7 +799,7 @@ body.rsvp-page {
   color: #fff;
 }
 
-/* BOTTOM COLORED SECTION */
+/* RSVP foorter section */
 .rsvp-bottom {
   background: #4a120f;
   color: rgba(255,255,255,0.92);
@@ -847,7 +857,7 @@ body.rsvp-page {
   opacity: 0.75;
 }
 
-/* mobile */
+/* mobile RSVP layout */
 @media (max-width: 640px) {
   .rsvp-card {
     width: min(220px, 62vw);
@@ -870,7 +880,7 @@ body.rsvp-page {
     padding: 55px 18px 45px;
   }
 }
-/* FIX RSVP SCROLL ISSUE */
+/* RSVP SCROLL ISSUE */
 body.rsvp-page .rsvp-overlay,
 body.rsvp-page .rsvp-card,
 body.rsvp-page .lace-frame {
@@ -878,7 +888,7 @@ body.rsvp-page .lace-frame {
 }
 .rsvp-text-block {
   position: absolute;
-  top: 225%;   /* THIS pushes it directly under the lace frame */
+  top: 225%;   /* pushes it directly under the lace frame */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
