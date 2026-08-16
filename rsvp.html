@@ -1,52 +1,200 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RSVP • Emily & Ryan</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Save Our Date • Emily & Ryan</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <link rel="stylesheet" href="rsvp.css?v=4">
 </head>
 
 <body class="rsvp-page">
-<p class="rsvp-intro">
-  We’re so excited<br>
-  to celebrate with you
-</p>
-  <section class="rsvp-hero">
-    <img src="images/engagement-background.jpg" class="hero-img" alt="Emily and Ryan engagement photo">
 
-    <div class="rsvp-overlay">
-      <div class="rsvp-card">
-  <img src="images/lace-frame.png" class="lace-frame" alt="Lace invitation frame">
+  <main>
 
-  <div class="save-date-text">
-    <div class="save-script">Save Our</div>
-    <div class="date-script">Date</div>
+    <!-- Photo Section -->
+    <section class="rsvp-hero">
+
+      <img
+        src="images/engagement-background.jpg"
+        class="hero-img"
+        alt="Emily and Ryan engagement photo"
+      >
+
+      <div class="rsvp-overlay">
+
+        <!-- Lace Invitation Card -->
+        <div class="rsvp-card">
+
+          <img
+            src="images/lace-frame.png"
+            class="lace-frame"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <div class="save-date-text">
+
+            <div class="save-script">
+              Save our
+            </div>
+
+            <div class="date-script">
+              Date
+            </div>
+
+            <p class="card-names">
+              EMILY &amp; RYAN
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Text Below Card -->
+        <div class="rsvp-text-block">
+
+          <p class="rsvp-subtext">
+            Formal invitation to follow
+          </p>
+
+          <p class="rsvp-location">
+            POWHATAN, VIRGINIA
+          </p>
+
+          <p class="rsvp-date">
+            09.18.2027
+          </p>
+
+          <p class="rsvp-instruction">
+            Please click below to respond
+          </p>
+
+          <a
+            href="https://www.zola.com/wedding/brooksandlee2027"
+            class="rsvp-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            RSVP
+          </a>
+
+        </div>
+
       </div>
+
+    </section>
+
+    <!-- Bottom Section -->
+<section class="rsvp-bottom">
+
+  <div class="rsvp-bottom-inner">
+
+    <div class="rsvp-monogram">
+      <img
+        src="images/locket.png"
+        class="rsvp-icon"
+        alt="Emily and Ryan"
+      >
     </div>
-  </section>
 
-<div class="rsvp-text-block">
-  <p class="rsvp-subtext">Formal invitation to follow</p>
+    <div class="rsvp-contact">
 
-  <p class="rsvp-location">
-    POWHATAN, VIRGINIA<br>
-    18.09.2027
-  </p>
-</div>
+      <p class="rsvp-note">
+        For any questions, please contact us at:
+      </p>
 
-  <section class="rsvp-bottom">
-    <div class="rsvp-bottom-inner">
-      <div class="rsvp-monogram">E&nbsp;&amp;&nbsp;R</div>
-      <p class="rsvp-note">For any questions, please contact us at:</p>
-      <p class="rsvp-email">your@email.com</p>
+      <a
+        href="mailto:Brooks.Lee@gmail.com"
+        class="rsvp-email"
+      >
+        brooks.lee2027@gmail.com
+      </a>
 
-      <p class="rsvp-love">WITH LOVE</p>
-      <h2 class="rsvp-signoff">Emily &amp; Ryan</h2>
-
-      <a href="index.html#rsvp" class="rsvp-back">&lt; Back to Invitation</a>
     </div>
-  </section>
 
-</body>
-</html>
+    <p class="rsvp-love">
+      WITH LOVE
+    </p>
+
+    <h1 class="rsvp-signoff">
+      Emily &amp; Ryan
+    </h1>
+
+    <p class="rsvp-join">
+      WE HOPE YOU CAN JOIN US
+    </p>
+
+    <a href="index.html#rsvp" class="rsvp-back">
+      ← <span>BACK TO INVITATION</span>
+    </a>
+
+  </div>
+
+
+<!-- Scroll effect -->
+<script>
+  window.addEventListener("load", () => {
+    const card = document.querySelector(".rsvp-card");
+    if (window.innerWidth <= 600)
+    return; 
+    if (!card || window.scrollY > 50) 
+    return;
+
+    const html = document.documentElement;
+    html.style.scrollBehavior = "auto";
+
+    let cancelled = false;
+
+    function cancelAutoScroll() {
+      cancelled = true;
+      html.style.scrollBehavior = "";
+    }
+
+    window.addEventListener("wheel", cancelAutoScroll, {
+      once: true,
+      passive: true
+    });
+
+    window.addEventListener("touchstart", cancelAutoScroll, {
+      once: true,
+      passive: true
+    });
+
+    window.addEventListener("pointerdown", cancelAutoScroll, {
+      once: true
+    });
+
+    window.addEventListener("keydown", cancelAutoScroll, {
+      once: true
+    });
+
+    const start = window.scrollY;
+
+    const end =
+      start + card.getBoundingClientRect().top - window.innerHeight * 0.00;
+
+    const duration = 8000;
+    const startTime = performance.now();
+
+    function scroll(timestamp) {
+      if (cancelled) return;
+
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+
+      window.scrollTo(0, start + (end - start) * progress);
+
+      if (progress < 1) {
+        requestAnimationFrame(scroll);
+      } else {
+        html.style.scrollBehavior = "";
+      }
+    }
+
+    requestAnimationFrame(scroll);
+  });
+</script>

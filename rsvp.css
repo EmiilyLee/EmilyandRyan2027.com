@@ -1,0 +1,604 @@
+/* ==========================================================================================================
+*** Fonts ***
+===========================================================================================================*/
+@font-face {
+  font-family: "BillaMount";
+  src: url("fonts/BillaMount-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OldMoneyScript";
+  src: url("fonts/OldMoneyFontTrio/OldMoney-Script.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OldMoneyItalic";
+  src: url(fonts/OldMoneyFontTrio/OldMoney-Italic.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OldMoneyRegular";
+  src: url(fonts/OldMoneyFontTrio/OldMoney-Regular.otf) format("opentype"); 
+  font-weight: normal;
+  font-style: normal;
+}
+/* ==========================================================================================================
+   Base
+========================================================================================================== */
+
+:root {
+  --burgundy: #48531A; 
+  --cream: #f4eee6;
+  --text-light: #f8f3ed;
+  --text-dark: #48531A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.rsvp-page {
+  background: var(--burgundy);
+  color: var(--text-light);
+  font-family: "OldMoneyRegular", serif;
+}
+
+/* ==========================================================================================================
+   Hero Section
+========================================================================================================== */
+
+.rsvp-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  filter: grayscale(1);
+}
+
+
+/* ==========================================================================================================
+   RSVP Overlay and Lace Card
+========================================================================================================== */
+
+.rsvp-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: min(100%, 78rem);
+  height: 100%;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: clamp(3rem, 7vw, 6rem) 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  text-align: center;
+}
+.rsvp-card {
+  .rsvp-card {
+  position: relative;
+  width: min(46rem, 56vw);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0; 
+}
+}
+
+.lace-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.save-date-text {
+  position: relative;
+  z-index: 1;
+  width: 72%;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.save-script {
+  font-family: "OldMoneyScript", cursive;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  line-height: 0.85;
+}
+
+.date-script {
+  margin-top: -0.15em;
+  font-family: "OldMoneyScript", cursive;
+  font-size: clamp(4rem, 8vw, 7.5rem);
+  line-height: 0.85;
+}
+
+.card-names,
+.card-date {
+  margin: 0;
+  font-family: "OldMoneyRegular", serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.card-names {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(0.85rem, 1.5vw, 1.2rem);
+}
+
+.card-date {
+  margin-top: 0.65rem;
+  font-size: clamp(0.8rem, 1.3vw, 1.05rem);
+}
+/* ==========================================================================================================
+   Hero Text
+========================================================================================================== */
+
+.rsvp-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(17rem);
+}
+
+.rsvp-subtext {
+  margin: 0 0 1.4rem;
+  font-family: "OldMoneyScript", cursive;
+  font-size: clamp(2.2rem, 4.5vw, 4.5rem);
+  line-height: 1;
+}
+
+.rsvp-location,
+.rsvp-date,
+.rsvp-instruction {
+  margin: 0;
+}
+
+.rsvp-location,
+.rsvp-date {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.rsvp-location {
+  font-size: clamp(0.95rem, 1.7vw, 1.35rem);
+}
+
+.rsvp-date {
+  margin-top: 0.45rem;
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+}
+
+.rsvp-instruction {
+  margin-top: 1.5rem;
+  font-family: "OldMoneyItalic", serif;
+  font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+}
+
+.rsvp-button {
+  min-width: min(20rem, 82vw);
+  margin-top: 1.5rem;
+  padding: 1.15rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.rsvp-button:hover,
+.rsvp-button:focus-visible {
+  background: var(--cream);
+  color: var(--burgundy);
+}
+
+
+/* ==========================================================================================================
+   Bottom Section
+========================================================================================================== */
+
+.rsvp-bottom {
+  min-height: 100svh;
+  background: var(--burgundy);
+}
+
+.rsvp-bottom-inner {
+  width: min(100%, 70rem);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: clamp(4rem, 9vw, 7rem) 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.rsvp-monogram {
+  font-family: "OldMoneyScript", cursive;
+  font-size: clamp(4.5rem, 9vw, 8rem);
+  line-height: 1;
+}
+
+.rsvp-icon {
+  width: clamp(5rem, 10vw, 8rem);
+  height: auto;
+  object-fit: contain;
+}
+
+.rsvp-contact {
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.rsvp-note,
+.rsvp-email {
+  margin: 0;
+  font-family: "OldMoneyRegular", serif;
+  letter-spacing: 0.10em;
+  overflow-wrap: anywhere;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+}
+
+.rsvp-email {
+  display: inline-block;
+  margin-top: 0.3rem;
+  text-decoration: none;
+}
+
+.rsvp-love {
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  letter-spacing: 0.16em;
+}
+
+.rsvp-signoff {
+  margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+  font-family: "OldMoneyScript", cursive;
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.rsvp-join {
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  font-size: clamp(1rem, 1.7vw, 1.35rem);
+  letter-spacing: 0.16em;
+}
+
+/* ==========================================================================================================
+   Countdown
+========================================================================================================== */
+
+.countdown {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(4rem, 1fr));
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+  width: min(100%, 34rem);
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-item span {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-item small {
+  margin-top: 0.7rem;
+  font-size: clamp(0.55rem, 1vw, 0.8rem);
+  letter-spacing: 0.08em;
+}
+
+.rsvp-back {
+  margin-top: 5rem;
+  padding-top: clamp(4rem, 8vw, 7rem);
+  text-decoration: none;
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+.rsvp-back {
+  margin-top: 5rem;
+  padding-top: clamp(4rem, 8vw, 7rem);
+  text-decoration: none;
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+/* Animated underline beneath "Back to invitation" */
+.rsvp-back span {
+  position: relative;
+  display: inline-block;
+}
+
+.rsvp-back span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.35s ease;
+}
+
+.rsvp-back:hover span::after,
+.rsvp-back:focus-visible span::after {
+  width: 100%;
+}
+
+
+/* ==========================================================================================================
+   Large Desktop
+========================================================================================================== */
+
+@media (min-width: 1200px) {
+  .rsvp-card {
+    width: min(100rem, 85vw);
+    transform: translateY(32rem);
+  }
+
+  .lace-frame {
+    transform: scale(3.4);
+    transform-origin: center;
+  }
+
+ .save-date-text {
+    position: relative;
+    left: 11.4rem;
+    top: 1.6rem;
+    transform: scale(1.1) rotate(-9deg);
+    transform-origin: center;
+  }
+
+  .card-names {
+    visibility: hidden;
+  }
+
+  .rsvp-text-block {
+    transform: translateY(45rem);
+  }
+
+  .rsvp-note { 
+    font-size: 1.7rem;
+  } 
+
+  .rsvp-email {
+    font-size: 1.5rem;
+  }
+
+  .rsvp-love {
+    font-size: 1.65rem;
+  }
+
+  .rsvp-join {
+    font-size: 1.45rem;
+  }
+
+  .rsvp-back {
+    font-size: 1.05rem;
+  }
+
+}
+/* ==========================================================================================================
+   Minimized Browser
+========================================================================================================== */
+
+@media (min-width: 601px) and (max-width: 1199px) {
+  .rsvp-card {
+    width: min(46rem, 62vw);
+    transform: translateY(15rem);
+  }
+
+  .lace-frame {
+    transform: scale(2.2);
+    transform-origin: center;
+  }
+
+  .save-date-text {
+    position: relative;
+    left: 4.5rem;
+    top: 1.0rem;
+    transform: scale(0.7) rotate(-9deg);
+    transform-origin: center;
+  }
+
+  .card-names {
+    visibility: hidden;
+  }
+
+  .rsvp-text-block {
+    transform: translateY(18rem); 
+}
+
+}
+/* ==========================================================================================================
+   Mobile
+========================================================================================================== */
+
+@media (max-width: 600px) {
+.rsvp-overlay {
+    height: 100%;
+    padding: 1.5rem 1rem 2rem;
+    gap: 1rem;
+  }
+
+ .rsvp-card {
+  width: min(72vw, 17rem);
+  transform: translateY(8.5rem);
+}
+
+   .lace-frame {
+    transform: scale(1.9); 
+    transform-origin: center;
+  }
+
+  .rsvp-text-block {
+    transform: translateY(10rem);
+  }
+
+  .save-date-text {
+  width:50%;
+  position: relative;
+  left: 4.3rem;
+  top: 0.65rem;
+  transform: scale(0.60) rotate(-9deg);
+  transform-origin: center;
+}
+
+.save-script {
+  font-size: clamp(2.4rem, 11vw, 3.4rem);
+  line-height: 0.85;
+}
+
+.date-script {
+  font-size: clamp(2.8rem, 13vw, 4rem);
+  line-height: 0.85;
+}
+
+ .card-names {
+  margin-top: 1rem;
+  font-size: 0.62rem;
+  visibility: hidden;
+}
+
+.card-date {
+  margin-top: 0.35rem;
+  font-size: 0.58rem;
+}
+
+.rsvp-subtext {
+  font-size: clamp(1.3rem, 6vw, 1.8rem);
+  line-height: 1;
+  margin-bottom: 0.7rem;
+}
+.rsvp-location {
+  font-size: 0.58rem;
+  letter-spacing: 0.09em;
+}
+
+.rsvp-date {
+  margin-top: 0.2rem;
+  font-size: 0.56rem;
+}
+
+.rsvp-instruction {
+  margin-top: 0.65rem;
+  font-size: 0.58rem;
+}
+
+ .rsvp-button {
+  width: min(56vw, 9rem);
+  min-width: 0;
+  margin-top: 0.8rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+}
+
+  .rsvp-bottom-inner {
+    min-height: 100svh;
+    padding: 4rem 1rem 1.5rem;
+  }
+
+  .rsvp-monogram {
+    font-size: clamp(4.5rem, 22vw, 6.5rem);
+  }
+
+  .rsvp-signoff {
+    font-size: clamp(3.5rem, 17vw, 5.2rem);
+  }
+
+  .countdown {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.3rem;
+  }
+
+  .countdown-item span {
+    font-size: clamp(1.8rem, 9vw, 2.7rem);
+  }
+
+  .countdown-item small {
+    font-size: 0.55rem;
+    letter-spacing: 0.03em;
+  }
+
+  .rsvp-back {
+    margin-top: 3rem;
+    letter-spacing: 0.22em;
+  }
+}
+
+/* ==========================================================================================================
+   Small Phones
+========================================================================================================== */
+
+@media (max-width: 390px) {
+  .rsvp-card {
+    width: 94vw;
+  }
+
+  .card-names {
+    font-size: 0.7rem;
+  }
+
+  .card-date {
+    font-size: 0.63rem;
+  }
+
+  .countdown-item span {
+    font-size: 1.75rem;
+  }
+
+  .countdown-item small {
+    font-size: 0.48rem;
+  }
+  
+  }
